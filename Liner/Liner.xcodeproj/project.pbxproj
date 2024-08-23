@@ -13,9 +13,10 @@
 		1E3A1EA42C7887070096708D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A1EA32C7887070096708D /* Preview Assets.xcassets */; };
 		1E3A1EB02C78877D0096708D /* ModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1EAF2C78877D0096708D /* ModelExample.swift */; };
 		1E3A1EB22C7887880096708D /* ViewModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1EB12C7887880096708D /* ViewModelExample.swift */; };
-		1E3A1EB42C7887940096708D /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1EB32C7887940096708D /* ViewExample.swift */; };
+		1E3A1EB42C7887940096708D /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1EB32C7887940096708D /* SidebarView.swift */; };
 		1E3A1EB62C78879F0096708D /* ExtensionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1EB52C78879F0096708D /* ExtensionExample.swift */; };
 		1E3A1EB82C7887A90096708D /* DesignSystemExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1EB72C7887A90096708D /* DesignSystemExample.swift */; };
+		1E3A1EBA2C78B3B50096708D /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1EB92C78B3B50096708D /* MeetingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +27,10 @@
 		1E3A1EA32C7887070096708D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1E3A1EAF2C78877D0096708D /* ModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExample.swift; sourceTree = "<group>"; };
 		1E3A1EB12C7887880096708D /* ViewModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelExample.swift; sourceTree = "<group>"; };
-		1E3A1EB32C7887940096708D /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
+		1E3A1EB32C7887940096708D /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		1E3A1EB52C78879F0096708D /* ExtensionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionExample.swift; sourceTree = "<group>"; };
 		1E3A1EB72C7887A90096708D /* DesignSystemExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemExample.swift; sourceTree = "<group>"; };
+		1E3A1EB92C78B3B50096708D /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,6 @@
 				1E3A1EAE2C7887330096708D /* DesignSystem */,
 				1E3A1E9C2C7887060096708D /* LinerApp.swift */,
 				1E3A1E9E2C7887060096708D /* ContentView.swift */,
-				1E3A1EA02C7887070096708D /* Assets.xcassets */,
 				1E3A1EA22C7887070096708D /* Preview Content */,
 			);
 			path = Liner;
@@ -101,7 +102,8 @@
 		1E3A1EAC2C7887220096708D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E3A1EB32C7887940096708D /* ViewExample.swift */,
+				1E3A1EB32C7887940096708D /* SidebarView.swift */,
+				1E3A1EB92C78B3B50096708D /* MeetingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +119,7 @@
 		1E3A1EAE2C7887330096708D /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				1E3A1EA02C7887070096708D /* Assets.xcassets */,
 				1E3A1EB72C7887A90096708D /* DesignSystemExample.swift */,
 			);
 			path = DesignSystem;
@@ -193,9 +196,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E3A1EB62C78879F0096708D /* ExtensionExample.swift in Sources */,
+				1E3A1EBA2C78B3B50096708D /* MeetingView.swift in Sources */,
 				1E3A1EB02C78877D0096708D /* ModelExample.swift in Sources */,
 				1E3A1EB82C7887A90096708D /* DesignSystemExample.swift in Sources */,
-				1E3A1EB42C7887940096708D /* ViewExample.swift in Sources */,
+				1E3A1EB42C7887940096708D /* SidebarView.swift in Sources */,
 				1E3A1EB22C7887880096708D /* ViewModelExample.swift in Sources */,
 				1E3A1E9F2C7887060096708D /* ContentView.swift in Sources */,
 				1E3A1E9D2C7887060096708D /* LinerApp.swift in Sources */,
