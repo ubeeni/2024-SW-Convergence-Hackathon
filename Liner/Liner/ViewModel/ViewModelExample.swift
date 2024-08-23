@@ -1,18 +1,18 @@
 //
-//  DesignSystemExample.swift
-//  Chuncheon
+//  ViewModelExample.swift
+//  Liner
 //
 //  Created by KimYuBin on 8/23/24.
 //
 
 import SwiftUI
 
-struct DesignSystemExample: View {
+struct ViewModelExample: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    DesignSystemExample()
+    ViewModelExample()
 }
