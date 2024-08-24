@@ -11,6 +11,10 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
+    var isFormValid: Bool {
+        !email.isEmpty && !password.isEmpty
+    }
+    
     var body: some View {
         ZStack {
             VStack(alignment: .center) {
@@ -47,9 +51,10 @@ struct LoginView: View {
                         .padding(.horizontal, 14)
                         .padding(.vertical, 18)
                         .frame(width: 120, height: 188, alignment: .center)
-                        .background(Color(red: 0.85, green: 0.97, blue: 0.51))
+                        .background(isFormValid ? Color(red: 0.85, green: 0.97, blue: 0.51) : Color(red: 0.85, green: 0.85, blue: 0.85))
                         .cornerRadius(16)
                     })
+                    .disabled(!isFormValid)
                 }
                 
                 Button(action: {
