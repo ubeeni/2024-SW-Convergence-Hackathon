@@ -119,11 +119,28 @@ struct MeetingView: View {
             .cornerRadius(20)
             .animation(.easeInOut(duration: 0.3), value: showDetails)
             
-            Rectangle()
-                .foregroundStyle(Color(red: 0.94, green: 0.94, blue: 0.94))
-                .cornerRadius(16)
-                .padding(.top, 5)
-                .padding(.bottom, 36)
+            Spacer()
+            
+            HStack {
+                VStack {
+                    LottieView(filename: "Sound")
+                        .frame(width: 150, height: 150)
+                    
+                    Text("AI가 듣고 있어요!")
+                        .font(.system(size: 12))
+                        .foregroundStyle(Color(red: 0.97, green: 0.98, blue: 1))
+                        .padding(.top, -40)
+                }
+                
+                Spacer()
+                
+            }
+            .background(
+                Rectangle()
+                    .foregroundStyle(Color(red: 0.84, green: 0.84, blue: 0.84))
+                    .cornerRadius(16)
+            )
+            .padding(.bottom, 20)
             
             HStack(spacing: 0) {
                 Button(action: {
@@ -145,6 +162,18 @@ struct MeetingView: View {
                         .foregroundStyle(Color(red: 0.62, green: 0.62, blue: 0.62))
                         .frame(width: 110, height: 110)
                         .background(isSpeakerOn ? Color(red: 0.85, green: 0.97, blue: 0.51) : Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .cornerRadius(16)
+                }
+                .padding(.leading, 16)
+                
+                Button(action: {
+                    //TODO: 파일 공유하기 버튼
+                }) {
+                    Image(systemName: "square.and.arrow.up.fill")
+                        .font(.system(size: 60))
+                        .foregroundStyle(.white)
+                        .frame(width: 110, height: 110)
+                        .background(Color(red: 0.62, green: 0.62, blue: 0.62))
                         .cornerRadius(16)
                 }
                 .padding(.leading, 16)
