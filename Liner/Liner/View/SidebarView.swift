@@ -207,9 +207,10 @@ struct SidebarView: View {
                             }
                         }
                     } else {
-                        Text("회의 기록이 없습니다.")
+                        Text("아직 일정이 없어요.")
                             .font(Font.system(size: 16))
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
+                            .padding(.top, 100)
                     }
                 }
                 .padding(.top, 16)

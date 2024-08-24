@@ -141,7 +141,7 @@ struct RequestView: View {
                             .font(Font.system(size: 20))
                             .clipped()
                         
-                        Text("~")
+                        Text("-")
                             .foregroundStyle(.black)
                             .font(Font.system(size: 16))
                         
@@ -218,7 +218,7 @@ struct RequestView: View {
                         
                         
                         items[currentDate]?.append((
-                            time: "\(timeStringStart) ~ \(timeStringEnd)",
+                            time: "\(timeStringStart) - \(timeStringEnd)",
                             title: title,
                             attendees: Array(selectedParticipants)
                         ))
