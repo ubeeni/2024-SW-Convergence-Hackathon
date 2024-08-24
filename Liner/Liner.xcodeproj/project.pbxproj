@@ -23,6 +23,16 @@
 		1ED0A91B2C7A28D800D78F4E /* Sound.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ED0A91A2C7A28D800D78F4E /* Sound.json */; };
 		1ED0A91D2C7A28DD00D78F4E /* LogoAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ED0A91C2C7A28DD00D78F4E /* LogoAnimation.json */; };
 		1ED0A91F2C7A3A0900D78F4E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */; };
+		212992AD2C7A4C3C004A92E0 /* FirebaseUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992AC2C7A4C3C004A92E0 /* FirebaseUserViewModel.swift */; };
+		212992B02C7A4CA7004A92E0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 212992AF2C7A4CA7004A92E0 /* FirebaseAnalytics */; };
+		212992B22C7A4CA7004A92E0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 212992B12C7A4CA7004A92E0 /* FirebaseFirestore */; };
+		212992B42C7A4CA7004A92E0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 212992B32C7A4CA7004A92E0 /* FirebaseMessaging */; };
+		212992B62C7A4D2B004A92E0 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992B52C7A4D2B004A92E0 /* DateFormatterManager.swift */; };
+		212992B82C7A4D43004A92E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992B72C7A4D43004A92E0 /* SceneDelegate.swift */; };
+		212992BA2C7A4D5F004A92E0 /* MeetingCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992B92C7A4D5F004A92E0 /* MeetingCreateTest.swift */; };
+		212992BC2C7A4D68004A92E0 /* UserInfoCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992BB2C7A4D68004A92E0 /* UserInfoCreateTest.swift */; };
+		212992C52C7A5064004A92E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992C42C7A5064004A92E0 /* AppDelegate.swift */; };
+		212992C72C7A5097004A92E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 212992C62C7A5097004A92E0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +52,15 @@
 		1ED0A91A2C7A28D800D78F4E /* Sound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sound.json; sourceTree = "<group>"; };
 		1ED0A91C2C7A28DD00D78F4E /* LogoAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LogoAnimation.json; sourceTree = "<group>"; };
 		1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		212992AC2C7A4C3C004A92E0 /* FirebaseUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserViewModel.swift; sourceTree = "<group>"; };
+		212992B52C7A4D2B004A92E0 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
+		212992B72C7A4D43004A92E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		212992B92C7A4D5F004A92E0 /* MeetingCreateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingCreateTest.swift; sourceTree = "<group>"; };
+		212992BB2C7A4D68004A92E0 /* UserInfoCreateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCreateTest.swift; sourceTree = "<group>"; };
+		212992C22C7A4E9E004A92E0 /* Liner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Liner.entitlements; sourceTree = "<group>"; };
+		212992C32C7A4EA5004A92E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		212992C42C7A5064004A92E0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		212992C62C7A5097004A92E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212992B42C7A4CA7004A92E0 /* FirebaseMessaging in Frameworks */,
+				212992B02C7A4CA7004A92E0 /* FirebaseAnalytics in Frameworks */,
 				1ED0A9192C7A289F00D78F4E /* Lottie in Frameworks */,
+				212992B22C7A4CA7004A92E0 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,11 +97,15 @@
 		1E3A1E9B2C7887060096708D /* Liner */ = {
 			isa = PBXGroup;
 			children = (
+				212992C62C7A5097004A92E0 /* GoogleService-Info.plist */,
+				212992C32C7A4EA5004A92E0 /* Info.plist */,
+				212992C22C7A4E9E004A92E0 /* Liner.entitlements */,
 				1E3A1EAA2C78870C0096708D /* Model */,
 				1E3A1EAB2C7887120096708D /* ViewModel */,
 				1E3A1EAC2C7887220096708D /* View */,
 				1E3A1EAD2C78872B0096708D /* Extension */,
 				1E3A1EAE2C7887330096708D /* DesignSystem */,
+				212992C42C7A5064004A92E0 /* AppDelegate.swift */,
 				1E3A1E9C2C7887060096708D /* LinerApp.swift */,
 				1E3A1E9E2C7887060096708D /* ContentView.swift */,
 				1E3A1EA22C7887070096708D /* Preview Content */,
@@ -106,6 +132,7 @@
 		1E3A1EAB2C7887120096708D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				212992AC2C7A4C3C004A92E0 /* FirebaseUserViewModel.swift */,
 				1E3A1EB12C7887880096708D /* ViewModelExample.swift */,
 			);
 			path = ViewModel;
@@ -116,9 +143,11 @@
 			children = (
 				1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */,
 				1ED0A9152C7A271B00D78F4E /* LottieView.swift */,
+				212992B92C7A4D5F004A92E0 /* MeetingCreateTest.swift */,
 				1E3A1EB92C78B3B50096708D /* MeetingView.swift */,
 				1E3A1EBD2C79859E0096708D /* RequestView.swift */,
 				1E3A1EB32C7887940096708D /* SidebarView.swift */,
+				212992BB2C7A4D68004A92E0 /* UserInfoCreateTest.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,7 +155,9 @@
 		1E3A1EAD2C78872B0096708D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				212992B52C7A4D2B004A92E0 /* DateFormatterManager.swift */,
 				1E3A1EB52C78879F0096708D /* ExtensionExample.swift */,
+				212992B72C7A4D43004A92E0 /* SceneDelegate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -160,6 +191,9 @@
 			name = Liner;
 			packageProductDependencies = (
 				1ED0A9182C7A289F00D78F4E /* Lottie */,
+				212992AF2C7A4CA7004A92E0 /* FirebaseAnalytics */,
+				212992B12C7A4CA7004A92E0 /* FirebaseFirestore */,
+				212992B32C7A4CA7004A92E0 /* FirebaseMessaging */,
 			);
 			productName = Liner;
 			productReference = 1E3A1E992C7887060096708D /* Liner.app */;
@@ -191,6 +225,7 @@
 			mainGroup = 1E3A1E902C7887060096708D;
 			packageReferences = (
 				1ED0A9172C7A289F00D78F4E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				212992AE2C7A4CA7004A92E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 1E3A1E9A2C7887060096708D /* Products */;
 			projectDirPath = "";
@@ -208,6 +243,7 @@
 			files = (
 				1ED0A91B2C7A28D800D78F4E /* Sound.json in Resources */,
 				1E3A1EA42C7887070096708D /* Preview Assets.xcassets in Resources */,
+				212992C72C7A5097004A92E0 /* GoogleService-Info.plist in Resources */,
 				1E3A1EA12C7887070096708D /* Assets.xcassets in Resources */,
 				1ED0A91D2C7A28DD00D78F4E /* LogoAnimation.json in Resources */,
 			);
@@ -221,15 +257,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E3A1EB62C78879F0096708D /* ExtensionExample.swift in Sources */,
+				212992B82C7A4D43004A92E0 /* SceneDelegate.swift in Sources */,
+				212992BC2C7A4D68004A92E0 /* UserInfoCreateTest.swift in Sources */,
 				1E3A1EBA2C78B3B50096708D /* MeetingView.swift in Sources */,
+				212992AD2C7A4C3C004A92E0 /* FirebaseUserViewModel.swift in Sources */,
 				1E3A1EB02C78877D0096708D /* Meeting.swift in Sources */,
+				212992B62C7A4D2B004A92E0 /* DateFormatterManager.swift in Sources */,
 				1E3A1EB82C7887A90096708D /* DesignSystemExample.swift in Sources */,
 				1E3A1EB42C7887940096708D /* SidebarView.swift in Sources */,
+				212992BA2C7A4D5F004A92E0 /* MeetingCreateTest.swift in Sources */,
 				1E3A1EBE2C79859E0096708D /* RequestView.swift in Sources */,
 				1E3A1EB22C7887880096708D /* ViewModelExample.swift in Sources */,
 				1ED0A9162C7A271B00D78F4E /* LottieView.swift in Sources */,
 				1ED0A91F2C7A3A0900D78F4E /* LoginView.swift in Sources */,
 				1E3A1E9F2C7887060096708D /* ContentView.swift in Sources */,
+				212992C52C7A5064004A92E0 /* AppDelegate.swift in Sources */,
 				1E3A1E9D2C7887060096708D /* LinerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,12 +403,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Liner/Liner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Liner/Preview Content\"";
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = F5WP2FDW4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Liner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -390,12 +434,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Liner/Liner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Liner/Preview Content\"";
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = F5WP2FDW4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Liner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,6 +492,14 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		212992AE2C7A4CA7004A92E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -453,6 +507,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1ED0A9172C7A289F00D78F4E /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		212992AF2C7A4CA7004A92E0 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 212992AE2C7A4CA7004A92E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		212992B12C7A4CA7004A92E0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 212992AE2C7A4CA7004A92E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		212992B32C7A4CA7004A92E0 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 212992AE2C7A4CA7004A92E0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

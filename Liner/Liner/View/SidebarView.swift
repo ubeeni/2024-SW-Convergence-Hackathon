@@ -25,10 +25,13 @@ struct SidebarView: View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 ZStack(alignment: .bottomTrailing) {
-                    Image(.imgProfile1)
-                        .resizable()
-                        .frame(width: 81, height: 81)
-                        .clipShape(Circle())
+                    NavigationLink(destination: UserInfoCreateTest()){
+                        Image(.imgProfile1)
+                            .resizable()
+                            .frame(width: 81, height: 81)
+                            .clipShape(Circle())
+                        
+                    }
                     
                     Circle()
                         .frame(width: 23, height: 23)
