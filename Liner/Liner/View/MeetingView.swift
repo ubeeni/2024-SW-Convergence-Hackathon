@@ -111,9 +111,9 @@ struct MeetingView: View {
                 }) {
                     Image(systemName: isMicOn ? "mic.fill" : "mic.slash.fill")
                         .font(.system(size: 60))
-                        .foregroundStyle(isMicOn ? .white : Color(red: 0.62, green: 0.62, blue: 0.62))
+                        .foregroundStyle(Color(red: 0.62, green: 0.62, blue: 0.62))
                         .frame(width: 110, height: 110)
-                        .background(isMicOn ? Color(red: 0.62, green: 0.62, blue: 0.62) : Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .background(isMicOn ? Color(red: 0.85, green: 0.97, blue: 0.51) : Color(red: 0.85, green: 0.85, blue: 0.85))
                         .cornerRadius(22.93)
                 }
                 
@@ -122,9 +122,9 @@ struct MeetingView: View {
                 }) {
                     Image(systemName: isSpeakerOn ? "speaker.fill" : "speaker.slash.fill")
                         .font(.system(size: 60))
-                        .foregroundStyle(isSpeakerOn ? .white : Color(red: 0.62, green: 0.62, blue: 0.62))
+                        .foregroundStyle(Color(red: 0.62, green: 0.62, blue: 0.62))
                         .frame(width: 110, height: 110)
-                        .background(isSpeakerOn ? Color(red: 0.62, green: 0.62, blue: 0.62) : Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .background(isSpeakerOn ? Color(red: 0.85, green: 0.97, blue: 0.51) : Color(red: 0.85, green: 0.85, blue: 0.85))
                         .cornerRadius(16)
                 }
                 .padding(.leading, 16)
