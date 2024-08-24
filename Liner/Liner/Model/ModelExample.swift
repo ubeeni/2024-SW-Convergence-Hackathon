@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
-struct ModelExample: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct UserInfo {
+    let name: String
+    let email: String
+    let department: String
+    let jobDescription: String
 }
 
-#Preview {
-    ModelExample()
-}

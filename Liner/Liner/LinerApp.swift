@@ -15,7 +15,9 @@ struct LinerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            UserInfoCreateTest()
+            NavigationStack{
+                ContentView()
+            }
         }
     }
 }

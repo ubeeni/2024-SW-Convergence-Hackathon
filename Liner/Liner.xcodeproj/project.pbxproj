@@ -22,6 +22,11 @@
 		212992972C79F998004A92E0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 212992962C79F998004A92E0 /* FirebaseFirestore */; };
 		212992992C79F998004A92E0 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 212992982C79F998004A92E0 /* FirebaseInAppMessaging-Beta */; };
 		2129929B2C79F998004A92E0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2129929A2C79F998004A92E0 /* FirebaseMessaging */; };
+		2129929F2C7A1011004A92E0 /* UserInfoCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2129929E2C7A1011004A92E0 /* UserInfoCreateTest.swift */; };
+		212992A12C7A1040004A92E0 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992A02C7A1040004A92E0 /* DateFormatterManager.swift */; };
+		212992A32C7A107A004A92E0 /* FirebaseUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992A22C7A107A004A92E0 /* FirebaseUserViewModel.swift */; };
+		212992A52C7A1096004A92E0 /* MeetingCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992A42C7A1096004A92E0 /* MeetingCreateTest.swift */; };
+		212992A72C7A121B004A92E0 /* FirebaseMeetingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992A62C7A121B004A92E0 /* FirebaseMeetingViewModel.swift */; };
 		38EEF3B82C797B3600014378 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38EEF3B72C797B3600014378 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,11 @@
 		2129928E2C79F8A1004A92E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2129929C2C79FA7F004A92E0 /* Liner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Liner.entitlements; sourceTree = "<group>"; };
 		2129929D2C79FA93004A92E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2129929E2C7A1011004A92E0 /* UserInfoCreateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCreateTest.swift; sourceTree = "<group>"; };
+		212992A02C7A1040004A92E0 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
+		212992A22C7A107A004A92E0 /* FirebaseUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserViewModel.swift; sourceTree = "<group>"; };
+		212992A42C7A1096004A92E0 /* MeetingCreateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingCreateTest.swift; sourceTree = "<group>"; };
+		212992A62C7A121B004A92E0 /* FirebaseMeetingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMeetingViewModel.swift; sourceTree = "<group>"; };
 		38EEF3B72C797B3600014378 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +123,8 @@
 		1E3A1EAB2C7887120096708D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				212992A62C7A121B004A92E0 /* FirebaseMeetingViewModel.swift */,
+				212992A22C7A107A004A92E0 /* FirebaseUserViewModel.swift */,
 				1E3A1EB12C7887880096708D /* ViewModelExample.swift */,
 			);
 			path = ViewModel;
@@ -121,8 +133,10 @@
 		1E3A1EAC2C7887220096708D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E3A1EB32C7887940096708D /* SidebarView.swift */,
+				212992A42C7A1096004A92E0 /* MeetingCreateTest.swift */,
 				1E3A1EB92C78B3B50096708D /* MeetingView.swift */,
+				1E3A1EB32C7887940096708D /* SidebarView.swift */,
+				2129929E2C7A1011004A92E0 /* UserInfoCreateTest.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +144,7 @@
 		1E3A1EAD2C78872B0096708D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				212992A02C7A1040004A92E0 /* DateFormatterManager.swift */,
 				1E3A1EB52C78879F0096708D /* ExtensionExample.swift */,
 			);
 			path = Extension;
@@ -231,7 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212992A12C7A1040004A92E0 /* DateFormatterManager.swift in Sources */,
 				1E3A1EB62C78879F0096708D /* ExtensionExample.swift in Sources */,
+				212992A52C7A1096004A92E0 /* MeetingCreateTest.swift in Sources */,
+				212992A72C7A121B004A92E0 /* FirebaseMeetingViewModel.swift in Sources */,
+				212992A32C7A107A004A92E0 /* FirebaseUserViewModel.swift in Sources */,
 				1E3A1EBA2C78B3B50096708D /* MeetingView.swift in Sources */,
 				1E3A1EB02C78877D0096708D /* ModelExample.swift in Sources */,
 				2129928F2C79F8A1004A92E0 /* AppDelegate.swift in Sources */,
@@ -239,6 +258,7 @@
 				1E3A1EB42C7887940096708D /* SidebarView.swift in Sources */,
 				1E3A1EB22C7887880096708D /* ViewModelExample.swift in Sources */,
 				1E3A1E9F2C7887060096708D /* ContentView.swift in Sources */,
+				2129929F2C7A1011004A92E0 /* UserInfoCreateTest.swift in Sources */,
 				1E3A1E9D2C7887060096708D /* LinerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

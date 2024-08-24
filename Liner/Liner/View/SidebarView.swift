@@ -76,6 +76,26 @@ struct SidebarView: View {
                 .padding(.top, 50)
             }
             
+            NavigationLink(destination: UserInfoCreateTest()){
+                HStack(spacing: 0) {
+                    Image(.imgComputer)
+                    
+                    Spacer()
+                    
+                    Text("개발 1팀")
+                        .font(Font.system(size: 24))
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.black)
+                    
+                }
+                .padding(.horizontal)
+                .frame(height: 80)
+                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                .cornerRadius(20)
+                .padding(.horizontal)
+                .padding(.top, 50)
+            }
+            
             Spacer()
                 .frame(height: .infinity)
             
