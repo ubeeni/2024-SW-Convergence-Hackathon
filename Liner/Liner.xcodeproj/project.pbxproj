@@ -33,6 +33,7 @@
 		212992BC2C7A4D68004A92E0 /* UserInfoCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992BB2C7A4D68004A92E0 /* UserInfoCreateTest.swift */; };
 		212992C52C7A5064004A92E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992C42C7A5064004A92E0 /* AppDelegate.swift */; };
 		212992C72C7A5097004A92E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 212992C62C7A5097004A92E0 /* GoogleService-Info.plist */; };
+		212992C92C7A5BE4004A92E0 /* AcceptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212992C82C7A5BE4004A92E0 /* AcceptView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		212992C32C7A4EA5004A92E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		212992C42C7A5064004A92E0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		212992C62C7A5097004A92E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		212992C82C7A5BE4004A92E0 /* AcceptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		1E3A1EAC2C7887220096708D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				212992C82C7A5BE4004A92E0 /* AcceptView.swift */,
 				1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */,
 				1ED0A9152C7A271B00D78F4E /* LottieView.swift */,
 				212992B92C7A4D5F004A92E0 /* MeetingCreateTest.swift */,
@@ -260,6 +263,7 @@
 				212992B82C7A4D43004A92E0 /* SceneDelegate.swift in Sources */,
 				212992BC2C7A4D68004A92E0 /* UserInfoCreateTest.swift in Sources */,
 				1E3A1EBA2C78B3B50096708D /* MeetingView.swift in Sources */,
+				212992C92C7A5BE4004A92E0 /* AcceptView.swift in Sources */,
 				212992AD2C7A4C3C004A92E0 /* FirebaseUserViewModel.swift in Sources */,
 				1E3A1EB02C78877D0096708D /* Meeting.swift in Sources */,
 				212992B62C7A4D2B004A92E0 /* DateFormatterManager.swift in Sources */,
