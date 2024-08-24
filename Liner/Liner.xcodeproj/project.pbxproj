@@ -22,6 +22,7 @@
 		1ED0A9192C7A289F00D78F4E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1ED0A9182C7A289F00D78F4E /* Lottie */; };
 		1ED0A91B2C7A28D800D78F4E /* Sound.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ED0A91A2C7A28D800D78F4E /* Sound.json */; };
 		1ED0A91D2C7A28DD00D78F4E /* LogoAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ED0A91C2C7A28DD00D78F4E /* LogoAnimation.json */; };
+		1ED0A91F2C7A3A0900D78F4E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		1ED0A9152C7A271B00D78F4E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		1ED0A91A2C7A28D800D78F4E /* Sound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sound.json; sourceTree = "<group>"; };
 		1ED0A91C2C7A28DD00D78F4E /* LogoAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LogoAnimation.json; sourceTree = "<group>"; };
+		1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				1E3A1EBD2C79859E0096708D /* RequestView.swift */,
 				1E3A1EB32C7887940096708D /* SidebarView.swift */,
 				1ED0A9152C7A271B00D78F4E /* LottieView.swift */,
+				1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				1E3A1EBE2C79859E0096708D /* RequestView.swift in Sources */,
 				1E3A1EB22C7887880096708D /* ViewModelExample.swift in Sources */,
 				1ED0A9162C7A271B00D78F4E /* LottieView.swift in Sources */,
+				1ED0A91F2C7A3A0900D78F4E /* LoginView.swift in Sources */,
 				1E3A1E9F2C7887060096708D /* ContentView.swift in Sources */,
 				1E3A1E9D2C7887060096708D /* LinerApp.swift in Sources */,
 			);
