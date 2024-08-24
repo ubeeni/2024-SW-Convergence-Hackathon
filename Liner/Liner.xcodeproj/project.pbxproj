@@ -23,6 +23,7 @@
 		1ED0A91B2C7A28D800D78F4E /* Sound.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ED0A91A2C7A28D800D78F4E /* Sound.json */; };
 		1ED0A91D2C7A28DD00D78F4E /* LogoAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1ED0A91C2C7A28DD00D78F4E /* LogoAnimation.json */; };
 		1ED0A91F2C7A3A0900D78F4E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */; };
+		1ED0A9232C7A760A00D78F4E /* OfficeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A9222C7A760A00D78F4E /* OfficeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1ED0A91A2C7A28D800D78F4E /* Sound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sound.json; sourceTree = "<group>"; };
 		1ED0A91C2C7A28DD00D78F4E /* LogoAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LogoAnimation.json; sourceTree = "<group>"; };
 		1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1ED0A9222C7A760A00D78F4E /* OfficeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */,
 				1ED0A9152C7A271B00D78F4E /* LottieView.swift */,
 				1E3A1EB92C78B3B50096708D /* MeetingView.swift */,
+				1ED0A9222C7A760A00D78F4E /* OfficeView.swift */,
 				1E3A1EBD2C79859E0096708D /* RequestView.swift */,
 				1E3A1EB32C7887940096708D /* SidebarView.swift */,
 			);
@@ -230,6 +233,7 @@
 				1ED0A9162C7A271B00D78F4E /* LottieView.swift in Sources */,
 				1ED0A91F2C7A3A0900D78F4E /* LoginView.swift in Sources */,
 				1E3A1E9F2C7887060096708D /* ContentView.swift in Sources */,
+				1ED0A9232C7A760A00D78F4E /* OfficeView.swift in Sources */,
 				1E3A1E9D2C7887060096708D /* LinerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

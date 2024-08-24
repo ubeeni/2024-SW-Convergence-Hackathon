@@ -25,7 +25,7 @@ struct SidebarView: View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 ZStack(alignment: .bottomTrailing) {
-                    Image(.imgProfile1)
+                    Image(.imgProfile3)
                         .resizable()
                         .frame(width: 81, height: 81)
                         .clipShape(Circle())
@@ -37,7 +37,7 @@ struct SidebarView: View {
                 
                 VStack(alignment: .leading, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("김파이리")
+                        Text("김소람")
                             .font(Font.system(size: 22))
                             .fontWeight(.bold)
                         
