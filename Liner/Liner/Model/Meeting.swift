@@ -6,11 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
+
+struct UserInfo {
+    let name: String
+    let email: String
+    let department: String
+    let jobDescription: String
+}
 
 struct Meeting {
     var title: String
     var time: String
-    var attendees: [Participant]  // 참여자 목록 추가
+    var attendees: [Participant]
 }
 
 struct Participant: Hashable {
