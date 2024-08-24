@@ -9,10 +9,13 @@ import SwiftUI
 
 struct MeetingView: View {
     @State private var showDetails: Bool = false
-    @State private var attendees: [String] = ["파이리", "니니", "제이미", "레오", "라일리"]
     @State private var isMicOn: Bool = true
     @State private var isSpeakerOn: Bool = true
-    
+
+    var meetingTitle: String
+    var meetingTime: String
+    var attendees: [Participant]
+
     var body: some View {
         VStack(spacing: 0) {
             VStack(spacing: 0) {
@@ -22,7 +25,7 @@ struct MeetingView: View {
                     }
                 }) {
                     HStack(alignment: .center, spacing: 0) {
-                        Text("App 신규 TF 주간롤링(월)")
+                        Text(meetingTitle)
                             .font(.system(size: 20, weight: .bold))
                             .foregroundStyle(.white)
                             .padding(.horizontal, 24)
@@ -36,7 +39,7 @@ struct MeetingView: View {
                             .foregroundStyle(.white)
                             .padding(.leading, 20)
                         
-                        Text("10:00 - 12:00")
+                        Text(meetingTime)
                             .font(.system(size: 20))
                             .foregroundStyle(.white)
                             .padding(.leading, 10)
@@ -47,7 +50,7 @@ struct MeetingView: View {
                         HStack {
                             Image(systemName: "person.fill")
                             
-                            Text("5")
+                            Text("\(attendees.count)") // Show count of attendees
                         }
                         .font(.system(size: 18))
                         .foregroundStyle(.white)
@@ -67,7 +70,7 @@ struct MeetingView: View {
                                 .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
                                 .frame(width: 212, height: 160)
                                 .overlay(
-                                    Text(attendee)
+                                    Text(attendee.name) // Display participant name
                                         .foregroundStyle(.black)
                                         .font(.system(size: 16))
                                 )
@@ -151,5 +154,8 @@ struct MeetingView: View {
 }
 
 #Preview {
-    MeetingView()
+    MeetingView(meetingTitle: "회의 제목", meetingTime: "10:00 - 12:00", attendees: [
+        Participant(name: "파이리", team: "팀", image: "imgProfile1"),
+        Participant(name: "니니", team: "팀", image: "imgProfile2")
+    ])
 }

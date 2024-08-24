@@ -9,13 +9,13 @@ import SwiftUI
 
 struct RequestView: View {
     @Binding var currentDate: Date
-    @Binding var items: [Date: [(time: String, title: String)]]
+    @Binding var items: [Date: [(time: String, title: String, attendees: [Participant])]]
+    @Binding var selectedParticipants: Set<Participant>
     
     @State private var newTimeStart = Date()
     @State private var newTimeEnd = Date()
     @State private var newTitle: String = ""
     @State private var searchQuery: String = ""
-    @State private var selectedParticipants: Set<Participant> = []
     @State private var availableParticipants: [Participant] = [
         Participant(name: "김파이리", team: "개발 1팀", image: "imgProfile1"),
         Participant(name: "이파이리", team: "개발 1팀", image: "imgProfile2"),
@@ -214,8 +214,15 @@ struct RequestView: View {
                         if !items.keys.contains(currentDate) {
                             items[currentDate] = []
                         }
-                        items[currentDate]?.append((time: "\(timeStringStart) ~ \(timeStringEnd)", title: title))
                         
+                        
+                        items[currentDate]?.append((
+                            time: "\(timeStringStart) ~ \(timeStringEnd)",
+                            title: title,
+                            attendees: Array(selectedParticipants)
+                        ))
+                        
+                        resetSelection()
                         presentationMode.wrappedValue.dismiss()
                     }
                     .font(Font.system(size: 20))
@@ -241,6 +248,16 @@ struct RequestView: View {
             filteredParticipants = availableParticipants
         }
         .frame(width: 950, height: 750)
+    }
+    
+    func resetSelection() {
+        selectedParticipants.removeAll()
+        newTimeStart = Date()
+        newTimeEnd = Date()
+        newTitle = ""
+        searchQuery = ""
+        newTag = ""
+        selectedTags.removeAll()
     }
     
     var displayedParticipants: [Participant] {
@@ -324,20 +341,10 @@ struct RequestView: View {
     }
 }
 
-struct Participant: Hashable {
-    var name: String
-    var team: String
-    var image: String
-}
-
 extension String {
     func widthOfString(usingFont font: UIFont) -> CGFloat {
         let fontAttributes = [NSAttributedString.Key.font: font]
         let size = (self as NSString).size(withAttributes: fontAttributes)
         return size.width
     }
-}
-
-#Preview {
-    RequestView(currentDate: .constant(Date()), items: .constant([:]))
 }
