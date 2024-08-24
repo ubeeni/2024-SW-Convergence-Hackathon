@@ -114,11 +114,11 @@
 		1E3A1EAC2C7887220096708D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */,
+				1ED0A9152C7A271B00D78F4E /* LottieView.swift */,
 				1E3A1EB92C78B3B50096708D /* MeetingView.swift */,
 				1E3A1EBD2C79859E0096708D /* RequestView.swift */,
 				1E3A1EB32C7887940096708D /* SidebarView.swift */,
-				1ED0A9152C7A271B00D78F4E /* LottieView.swift */,
-				1ED0A91E2C7A3A0900D78F4E /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
