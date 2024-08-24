@@ -10,10 +10,7 @@ import SwiftUI
 struct SidebarView: View {
     @State private var search: String = ""
     @State private var showModal: Bool = false
-    @State private var newTime = Date()
-    @State private var newTitle: String = ""
     @State private var currentDate = Date()
-    
     @State private var selectedTeam: String? = "개발 1팀"
     
     @State private var items: [Date: [(time: String, title: String)]] = [
@@ -24,7 +21,7 @@ struct SidebarView: View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 ZStack(alignment: .bottomTrailing) {
-                    Image(.imgProfile)
+                    Image(.imgProfile1)
                         .resizable()
                         .frame(width: 81, height: 81)
                     
@@ -202,39 +199,9 @@ struct SidebarView: View {
                 .padding(.horizontal)
             }
         }
-        .sheet(isPresented: $showModal) {
-            VStack {
-                DatePicker(
-                    "시간 선택",
-                    selection: $newTime,
-                    displayedComponents: [.hourAndMinute]
-                )
-                .datePickerStyle(WheelDatePickerStyle())
-                .padding()
-                
-                TextField("제목 입력", text: $newTitle)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                
-                Button("추가") {
-                    let timeFormatter = DateFormatter()
-                    timeFormatter.dateFormat = "HH:mm"
-                    let timeString = timeFormatter.string(from: newTime)
-                    
-                    if !items.keys.contains(currentDate) {
-                        items[currentDate] = []
-                    }
-                    items[currentDate]?.append((time: timeString, title: newTitle))
-                    showModal.toggle()
-                }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(12)
-                
-                Spacer()
-            }
-            .padding()
+        .fullScreenCover(isPresented: $showModal) {
+            RequestView(currentDate: $currentDate, items: $items)
+                .presentationBackground(.black.opacity(0.4))
         }
     }
     
