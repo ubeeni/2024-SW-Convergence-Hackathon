@@ -28,6 +28,7 @@ struct SidebarView: View {
                     Image(.imgProfile1)
                         .resizable()
                         .frame(width: 81, height: 81)
+                        .clipShape(Circle())
                     
                     Circle()
                         .frame(width: 23, height: 23)

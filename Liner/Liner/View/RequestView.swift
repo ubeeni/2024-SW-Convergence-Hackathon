@@ -77,8 +77,9 @@ struct RequestView: View {
                                     VStack {
                                         Image(participant.image)
                                             .resizable()
-                                            .aspectRatio(contentMode: .fit)
+                                            .aspectRatio(contentMode: .fill)
                                             .frame(width: 81, height: 81)
+                                            .clipShape(Circle())
                                         
                                         VStack {
                                             Text(participant.name)
