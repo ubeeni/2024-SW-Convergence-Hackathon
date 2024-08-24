@@ -4,10 +4,8 @@
 //
 //  Created by ram on 8/24/24.
 //
-
 import Foundation
 import SwiftUI
-import Foundation
 import Firebase
 import UserNotifications
 
@@ -68,7 +66,17 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // Background에서 알림을 탭했을 때 호출
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("User tapped on notification: \(response.notification.request.content.userInfo)")
+//        print("User tapped on notification: \(response.notification.request.content.userInfo)")
+
+        // 알림의 userInfo에서 딥링크 URL을 추출하여 처리
+        if let deepLinkString = response.notification.request.content.userInfo["deep_link"] as? String,
+           let deepLinkURL = URL(string: deepLinkString) {
+            // 딥링크 URL을 NotificationCenter를 통해 게시하여 처리
+            NotificationCenter.default.post(name: .handleDeepLink, object: deepLinkURL)
+        } else {
+            print("No deep link found in notification")
+        }
+
         completionHandler()
     }
 }
@@ -87,6 +95,9 @@ extension AppDelegate: MessagingDelegate {
         )
         
         // TODO: 필요시 서버에 FCM 토큰 전송 로직 추가
-        
     }
+}
+
+extension Notification.Name {
+    static let handleDeepLink = Notification.Name("handleDeepLink")
 }
