@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct MeetingView: View {
+    
     @State private var showDetails: Bool = false
     @State private var isMicOn: Bool = true
     @State private var isSpeakerOn: Bool = true
+    @StateObject private var micPermission = MicrophonePermissionManager()
+    let speechRecognizer: SpeechRecognizer
+    let agoraManager: AgoraManager
     
     var meetingTitle: String
     var meetingTime: String
@@ -65,22 +69,28 @@ struct MeetingView: View {
                 
                 if showDetails {
                     LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 3),
+                        columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3),
                         alignment: .center,
-                        spacing: 16
+                        spacing: 30
                     ) {
-                        ForEach(attendees, id: \.self) { attendee in
+                        ForEach(Array(agoraManager.participants.values)) { participant in
                             ZStack(alignment: .bottomLeading) {
-                                Image(attendee.image)
+                                Image(.imgProfile4)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(width: 260, height: 140)
+                                    .frame(width: 280, height: 200)
+                                    .clipped()
+                                    .cornerRadius(16)
                                 
                                 HStack {
                                     Image(systemName: isMicOn ? "mic.fill" : "mic.slash.fill")
                                         .foregroundStyle(.white)
                                     
-                                    Text(attendee.name)
+                                    //                                    Text(attendee.name)
+                                    //                                        .font(.system(size: 14))
+                                    //                                        .fontWeight(.medium)
+                                    //                                        .foregroundColor(.white)
+                                    Text("\(participant.userName)")
                                         .font(.system(size: 14))
                                         .fontWeight(.medium)
                                         .foregroundColor(.white)
@@ -90,7 +100,7 @@ struct MeetingView: View {
                                 .background(Color(red: 0.59, green: 0.59, blue: 0.59))
                                 .cornerRadius(20)
                                 .padding(.leading, 13.5)
-                                .padding(.bottom, -5)
+                                .padding(.bottom, 5)
                             }
                         }
                     }
@@ -98,6 +108,7 @@ struct MeetingView: View {
                     .frame(maxHeight: showDetails ? .infinity : 0)
                     .animation(.easeInOut(duration: 0.3), value: showDetails)
                 }
+                //                }
             }
             .background(
                 Group {
@@ -131,6 +142,8 @@ struct MeetingView: View {
                         .foregroundStyle(Color(red: 0.97, green: 0.98, blue: 1))
                         .padding(.top, -40)
                 }
+                
+                Text("\(speechRecognizer.transcript)")
                 
                 Spacer()
                 
@@ -181,6 +194,7 @@ struct MeetingView: View {
                 Spacer()
                 
                 Button(action: {
+                    agoraManager.leaveChannel()
                 }) {
                     HStack {
                         Image(systemName: "stop.fill")
@@ -194,17 +208,22 @@ struct MeetingView: View {
                     .cornerRadius(22.93)
                 }
             }
+            .onAppear() {
+                
+                micPermission.requestPermission()
+                micPermission.checkPermission()
+            }
             .padding(.bottom, 40)
         }
     }
 }
 
-#Preview {
-    MeetingView(meetingTitle: "회의 제목", meetingTime: "10:00 - 12:00", attendees: [
-        Participant(name: "파이리", team: "팀", image: "imgProfile1"),
-        Participant(name: "니니", team: "팀", image: "imgProfile2"),
-        Participant(name: "또가스", team: "팀", image: "imgProfile3"),
-        Participant(name: "리아", team: "팀", image: "imgProfile4"),
-        Participant(name: "홍길동", team: "팀", image: "imgProfile5")
-    ])
-}
+//#Preview {
+//    MeetingView(meetingTitle: "회의 제목", meetingTime: "10:00 - 12:00", attendees: [
+//        Participant(name: "파이리", team: "팀", image: "imgProfile1"),
+//        Participant(name: "니니", team: "팀", image: "imgProfile2"),
+//        Participant(name: "또가스", team: "팀", image: "imgProfile3"),
+//        Participant(name: "리아", team: "팀", image: "imgProfile4"),
+//        Participant(name: "홍길동", team: "팀", image: "imgProfile5")
+//    ])
+//}

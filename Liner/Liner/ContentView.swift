@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject private var micPermission = MicrophonePermissionManager()
+    @ObservedObject private var agoraManager = AgoraManager()
     @State private var selectedMeeting: Meeting?
     @State private var showSplash = true
+    @StateObject private var speechRecognizer = SpeechRecognizer()
+    
+    var userName: String
     
     var body: some View {
         ZStack {
             HStack(spacing: 0) {
-                SidebarView(selectedMeeting: $selectedMeeting)
+                SidebarView(speechRecognizer: speechRecognizer, agoraManager: agoraManager, userName: userName, selectedMeeting: $selectedMeeting)
                     .frame(width: 385)
                 
                 if let meeting = selectedMeeting {
-                    MeetingView(meetingTitle: meeting.title,
+                    MeetingView(speechRecognizer: speechRecognizer, agoraManager: agoraManager, meetingTitle: meeting.title,
                                 meetingTime: meeting.time,
                                 attendees: meeting.attendees)
                     .padding(.trailing, 37)
@@ -40,6 +46,7 @@ struct ContentView: View {
                     .zIndex(1)
             }
         }
+        .navigationBarBackButtonHidden()
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation {
@@ -81,6 +88,6 @@ struct SplashView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView(name: "")
+//}

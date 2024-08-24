@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SidebarView: View {
+    
+    let speechRecognizer: SpeechRecognizer
+    let agoraManager: AgoraManager
     @State private var search: String = ""
     @State private var showModal: Bool = false
     @State private var currentDate = Date()
@@ -18,7 +21,7 @@ struct SidebarView: View {
     ]
     
     @State private var selectedParticipants: Set<Participant> = []
-    
+    var userName: String
     @Binding var selectedMeeting: Meeting?
     
     var body: some View {
@@ -177,6 +180,7 @@ struct SidebarView: View {
                     if let dailyItems = items[currentDate] {
                         ForEach(dailyItems.sorted(by: { $0.time < $1.time }), id: \.time) { item in
                             Button(action: {
+//                                agoraManager.leaveChannel()
                                 selectedParticipants = Set(item.attendees)
                                 let meeting = Meeting(
                                     title: item.title,
@@ -184,6 +188,9 @@ struct SidebarView: View {
                                     attendees: item.attendees
                                 )
                                 selectedMeeting = meeting
+                                agoraManager.joinChannel(name: userName)
+                                speechRecognizer.transcript = ""
+                                speechRecognizer.startTranscribing()
                             }) {
                                 HStack {
                                     Text(item.time)

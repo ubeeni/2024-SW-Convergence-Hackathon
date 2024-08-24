@@ -1,0 +1,24 @@
+{
+  "originHash" : "71655ba14c13df84ea97d4497d99a77b1f43a1784b57e5940a7a66451aaaef94",
+  "pins" : [
+    {
+      "identity" : "agoraaudio_ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AgoraIO/AgoraAudio_iOS.git",
+      "state" : {
+        "revision" : "69728d0ece2d7c83a1d2239cd9a81939e6c1f703",
+        "version" : "4.4.0"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "fe4c6fe3a0aa66cdeb51d549623c82ca9704b9a5",
+        "version" : "4.5.0"
+      }
+    }
+  ],
+  "version" : 3
+}
