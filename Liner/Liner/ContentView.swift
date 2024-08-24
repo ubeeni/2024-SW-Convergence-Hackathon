@@ -55,7 +55,7 @@ struct SplashView: View {
         ZStack {
             VStack(alignment: .center) {
                 Text("온라인을 오프라인처럼, 가까운 회의 공간")
-                    .font(.system(size: 20))
+                    .font(.system(size: 19))
                     .foregroundStyle(.white)
 
                 LottieView(filename: "LogoAnimation")
