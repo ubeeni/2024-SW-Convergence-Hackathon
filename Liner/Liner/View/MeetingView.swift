@@ -9,9 +9,12 @@ import SwiftUI
 
 struct MeetingView: View {
     @State private var showDetails: Bool = false
-    @State private var attendees: [String] = ["파이리", "니니", "제이미", "레오", "라일리"]
     @State private var isMicOn: Bool = true
     @State private var isSpeakerOn: Bool = true
+    
+    var meetingTitle: String
+    var meetingTime: String
+    var attendees: [Participant]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -22,7 +25,7 @@ struct MeetingView: View {
                     }
                 }) {
                     HStack(alignment: .center, spacing: 0) {
-                        Text("App 신규 TF 주간롤링(월)")
+                        Text(meetingTitle)
                             .font(.system(size: 20, weight: .bold))
                             .foregroundStyle(.white)
                             .padding(.horizontal, 24)
@@ -36,7 +39,7 @@ struct MeetingView: View {
                             .foregroundStyle(.white)
                             .padding(.leading, 20)
                         
-                        Text("10:00 - 12:00")
+                        Text(meetingTime)
                             .font(.system(size: 20))
                             .foregroundStyle(.white)
                             .padding(.leading, 10)
@@ -47,7 +50,7 @@ struct MeetingView: View {
                         HStack {
                             Image(systemName: "person.fill")
                             
-                            Text("5")
+                            Text("\(attendees.count)")
                         }
                         .font(.system(size: 18))
                         .foregroundStyle(.white)
@@ -61,21 +64,39 @@ struct MeetingView: View {
                 }
                 
                 if showDetails {
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 3), spacing: 8) {
+                    LazyVGrid(
+                        columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 3),
+                        alignment: .center,
+                        spacing: 16
+                    ) {
                         ForEach(attendees, id: \.self) { attendee in
-                            Rectangle()
-                                .fill(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                .frame(width: 212, height: 160)
-                                .overlay(
-                                    Text(attendee)
-                                        .foregroundStyle(.black)
-                                        .font(.system(size: 16))
-                                )
-                                .cornerRadius(16)
+                            ZStack(alignment: .bottomLeading) {
+                                Image(attendee.image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 260, height: 140)
+                                
+                                HStack {
+                                    Image(systemName: isMicOn ? "mic.fill" : "mic.slash.fill")
+                                        .foregroundStyle(.white)
+                                    
+                                    Text(attendee.name)
+                                        .font(.system(size: 14))
+                                        .fontWeight(.medium)
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 3)
+                                .background(Color(red: 0.59, green: 0.59, blue: 0.59))
+                                .cornerRadius(20)
+                                .padding(.leading, 13.5)
+                                .padding(.bottom, -5)
+                            }
                         }
                     }
-                    .padding(.vertical, 30)
-                    .padding(.horizontal, 40)
+                    .padding(.horizontal, 20)
+                    .frame(maxHeight: showDetails ? .infinity : 0)
+                    .animation(.easeInOut(duration: 0.3), value: showDetails)
                 }
             }
             .background(
@@ -91,18 +112,17 @@ struct MeetingView: View {
                         )
                     } else {
                         Color(red: 0.28, green: 0.28, blue: 0.28)
+                            .frame(height: 80)
                     }
                 }
             )
             .cornerRadius(20)
-            .padding(.top, 42)
-            .frame(height: showDetails ? 450 : 80)
             .animation(.easeInOut(duration: 0.3), value: showDetails)
             
             Rectangle()
                 .foregroundStyle(Color(red: 0.94, green: 0.94, blue: 0.94))
                 .cornerRadius(16)
-                .padding(.top, 38)
+                .padding(.top, 5)
                 .padding(.bottom, 36)
             
             HStack(spacing: 0) {
@@ -151,5 +171,11 @@ struct MeetingView: View {
 }
 
 #Preview {
-    MeetingView()
+    MeetingView(meetingTitle: "회의 제목", meetingTime: "10:00 - 12:00", attendees: [
+        Participant(name: "파이리", team: "팀", image: "imgProfile1"),
+        Participant(name: "니니", team: "팀", image: "imgProfile2"),
+        Participant(name: "또가스", team: "팀", image: "imgProfile3"),
+        Participant(name: "리아", team: "팀", image: "imgProfile4"),
+        Participant(name: "홍길동", team: "팀", image: "imgProfile5")
+    ])
 }

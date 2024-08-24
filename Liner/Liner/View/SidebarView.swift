@@ -13,9 +13,13 @@ struct SidebarView: View {
     @State private var currentDate = Date()
     @State private var selectedTeam: String? = "개발 1팀"
     
-    @State private var items: [Date: [(time: String, title: String)]] = [
-        Date(): [("10:00", "데일리스크럼"), ("14:00", "회의"), ("09:00", "아침 미팅")]
+    @State private var items: [Date: [(time: String, title: String, attendees: [Participant])]] = [
+        Date(): [("10:00", "데일리스크럼", []), ("14:00", "회의", []), ("09:00", "아침 미팅", [])]
     ]
+    
+    @State private var selectedParticipants: Set<Participant> = []
+    
+    @Binding var selectedMeeting: Meeting?
     
     var body: some View {
         VStack(spacing: 0) {
@@ -24,6 +28,7 @@ struct SidebarView: View {
                     Image(.imgProfile1)
                         .resizable()
                         .frame(width: 81, height: 81)
+                        .clipShape(Circle())
                     
                     Circle()
                         .frame(width: 23, height: 23)
@@ -55,13 +60,14 @@ struct SidebarView: View {
             
             HStack(spacing: 0) {
                 Rectangle()
-                    .foregroundStyle(selectedTeam == "개발 1팀" ? Color(red: 0.85, green: 0.97, blue: 0.51) : .white)
+                    .foregroundStyle(selectedTeam == "개발 1팀" && selectedMeeting == nil ? Color(red: 0.85, green: 0.97, blue: 0.51) : Color(red: 0.96, green: 0.96, blue: 0.96))
                     .frame(width: 8, height: 80)
                     .cornerRadius(12)
                     .padding(.leading, 23)
                 
                 Button {
                     selectedTeam = "개발 1팀"
+                    selectedMeeting = nil
                 } label: {
                     HStack(spacing: 0) {
                         Image(.imgComputer)
@@ -85,13 +91,14 @@ struct SidebarView: View {
             
             HStack(spacing: 0) {
                 Rectangle()
-                    .foregroundStyle(selectedTeam == "신규 TF" ? Color(red: 0.85, green: 0.97, blue: 0.51) : .white)
+                    .foregroundStyle(selectedTeam == "신규 TF" && selectedMeeting == nil ? Color(red: 0.85, green: 0.97, blue: 0.51) : Color(red: 0.96, green: 0.96, blue: 0.96))
                     .frame(width: 8, height: 80)
                     .cornerRadius(12)
                     .padding(.leading, 23)
                 
                 Button {
                     selectedTeam = "신규 TF"
+                    selectedMeeting = nil
                 } label: {
                     HStack(spacing: 0) {
                         Image(.imgComputer)
@@ -169,7 +176,15 @@ struct SidebarView: View {
                 VStack(spacing: 16) {
                     if let dailyItems = items[currentDate] {
                         ForEach(dailyItems.sorted(by: { $0.time < $1.time }), id: \.time) { item in
-                            NavigationLink(destination: MeetingView()) {
+                            Button(action: {
+                                selectedParticipants = Set(item.attendees)
+                                let meeting = Meeting(
+                                    title: item.title,
+                                    time: item.time,
+                                    attendees: item.attendees
+                                )
+                                selectedMeeting = meeting
+                            }) {
                                 HStack {
                                     Text(item.time)
                                         .font(Font.system(size: 20))
@@ -185,7 +200,9 @@ struct SidebarView: View {
                                 }
                                 .padding(.horizontal)
                                 .frame(height: 60)
-                                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                .background(
+                                    (selectedMeeting?.title == item.title) ? Color(red: 0.85, green: 0.85, blue: 0.85) : Color(red: 0.96, green: 0.96, blue: 0.96)
+                                )
                                 .cornerRadius(12)
                             }
                         }
@@ -200,7 +217,7 @@ struct SidebarView: View {
             }
         }
         .fullScreenCover(isPresented: $showModal) {
-            RequestView(currentDate: $currentDate, items: $items)
+            RequestView(currentDate: $currentDate, items: $items, selectedParticipants: $selectedParticipants)
                 .presentationBackground(.black.opacity(0.4))
         }
     }
@@ -211,8 +228,4 @@ struct SidebarView: View {
         formatter.locale = Locale(identifier: "ko_KR")
         return formatter.string(from: date)
     }
-}
-
-#Preview {
-    SidebarView()
 }
