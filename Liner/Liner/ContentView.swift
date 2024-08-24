@@ -23,14 +23,11 @@ struct ContentView: View {
                                 attendees: meeting.attendees)
                     .padding(.trailing, 37)
                 } else {
-                    VStack {
-                        Image(.imgTalk)
-                            .resizable()
-                        
-                        Spacer()
-                    }
-                    .padding(.trailing, 37)
-                    .frame(maxWidth: .infinity)
+                    Spacer()
+                    
+                    OfficeView()
+                    
+                    Spacer()
                 }
             }
             
