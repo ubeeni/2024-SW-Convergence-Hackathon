@@ -14,6 +14,8 @@ struct SidebarView: View {
     @State private var newTitle: String = ""
     @State private var currentDate = Date()
     
+    @State private var selectedTeam: String? = "개발 1팀"
+    
     @State private var items: [Date: [(time: String, title: String)]] = [
         Date(): [("10:00", "데일리스크럼"), ("14:00", "회의"), ("09:00", "아침 미팅")]
     ]
@@ -54,27 +56,65 @@ struct SidebarView: View {
             .padding(.leading, 31)
             .padding(.top, 43)
             
-            Button {
+            HStack(spacing: 0) {
+                Rectangle()
+                    .foregroundStyle(selectedTeam == "개발 1팀" ? Color(red: 0.85, green: 0.97, blue: 0.51) : .white)
+                    .frame(width: 8, height: 80)
+                    .cornerRadius(12)
+                    .padding(.leading, 23)
                 
-            } label: {
-                HStack(spacing: 0) {
-                    Image(.imgComputer)
-                    
-                    Spacer()
-                    
-                    Text("개발 1팀")
-                        .font(Font.system(size: 24))
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.black)
-                    
+                Button {
+                    selectedTeam = "개발 1팀"
+                } label: {
+                    HStack(spacing: 0) {
+                        Image(.imgComputer)
+                        
+                        Spacer()
+                        
+                        Text("개발 1팀")
+                            .font(Font.system(size: 24))
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.black)
+                        
+                    }
+                    .padding(.horizontal)
+                    .frame(height: 80)
+                    .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                    .cornerRadius(20)
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
-                .frame(height: 80)
-                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                .cornerRadius(20)
-                .padding(.horizontal)
-                .padding(.top, 50)
             }
+            .padding(.top, 50)
+            
+            HStack(spacing: 0) {
+                Rectangle()
+                    .foregroundStyle(selectedTeam == "신규 TF" ? Color(red: 0.85, green: 0.97, blue: 0.51) : .white)
+                    .frame(width: 8, height: 80)
+                    .cornerRadius(12)
+                    .padding(.leading, 23)
+                
+                Button {
+                    selectedTeam = "신규 TF"
+                } label: {
+                    HStack(spacing: 0) {
+                        Image(.imgComputer)
+                        
+                        Spacer()
+                        
+                        Text("신규 TF")
+                            .font(Font.system(size: 24))
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.black)
+                        
+                    }
+                    .padding(.horizontal)
+                    .frame(height: 80)
+                    .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                    .cornerRadius(20)
+                    .padding(.horizontal)
+                }
+            }
+            .padding(.top, 8)
             
             Spacer()
                 .frame(height: .infinity)
